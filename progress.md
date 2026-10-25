@@ -10,3 +10,15 @@
 
 ### Next
 Explore NumPy dimensions, reshaping, and matrix operations.
+
+Day 2 — NumPy Fundamentals
+
+Completed:
+- Practised 1D, 2D, and 3D arrays.
+- Learned ndim and shape.
+- Practised array indexing and reshape().
+- Compared element-wise multiplication with matrix multiplication.
+- Calculated weighted sums used in neural networks.
+
+Next:
+- Continue with NumPy fundamentals and build a simple neuron from scratch.
