@@ -19,17 +19,17 @@ My goal is to understand how AI works under the hood by implementing concepts, r
 
 ## Roadmap
 
-| Phase      | Focus                                           |
-| ---------- | ----------------------------------------------- |
-| Week 1     | Python refresh, Git, and development setup      |
-| Week 2     | NumPy and numerical computing                   |
-| Week 3     | Machine learning fundamentals with scikit-learn |
-| Week 4     | Neural networks and gradients from scratch      |
-| Week 5     | PyTorch fundamentals                            |
-| Week 6     | Tokenization and language models                |
-| Week 7     | Attention and transformer architecture          |
-| Week 8     | Building a tiny GPT-style model                 |
-| Final days | Testing, documentation, and publishing          |
+| Phase      | Focus                                                          |
+| ---------- | -------------------------------------------------------------- |
+| Week 1     | Python refresh, Git, development setup, and NumPy fundamentals |
+| Week 2     | Numerical computing and mathematics for machine learning       |
+| Week 3     | Machine learning fundamentals with scikit-learn                |
+| Week 4     | Neural networks and gradients from scratch                     |
+| Week 5     | PyTorch fundamentals                                           |
+| Week 6     | Tokenization and language models                               |
+| Week 7     | Attention and transformer architecture                         |
+| Week 8     | Building a tiny GPT-style model                                |
+| Final days | Testing, documentation, and publishing                         |
 
 This is a learning roadmap, so the schedule may change as I work through the concepts.
 
@@ -45,16 +45,34 @@ Additional libraries will be introduced as needed.
 
 ## Progress
 
-### Day 1 — Environment Setup and NumPy
+### Day 1 — Environment Setup and NumPy Basics
 
 * [x] Verify Python, Git, and pip.
 * [x] Create a Python virtual environment.
 * [x] Install NumPy.
+* [x] Create the project repository and push the initial work to GitHub.
 * [x] Practice array creation, indexing, and shape.
 * [x] Explore element-wise addition, multiplication, and exponentiation.
-* [ ] Publish the first experiment to GitHub.
+* [x] Create the first NumPy experiment.
 
-More experiments and progress updates will be added as the journey continues.
+### Day 2 — NumPy Dimensions, Reshaping, and Matrix Operations
+
+* [x] Explore 1D, 2D, and 3D arrays.
+* [x] Understand `ndim` and `shape`.
+* [x] Practise accessing elements using row and column indexing.
+* [x] Reshape arrays using `reshape()`.
+* [x] Compare element-wise addition and multiplication.
+* [x] Understand the difference between element-wise multiplication (`*`) and matrix multiplication (`@`).
+* [x] Calculate weighted sums using NumPy.
+* [x] Update the project progress log and push the Day 2 changes to GitHub.
+
+### Next Steps
+
+* Build a simple artificial neuron from scratch.
+* Explore weights, bias, and activation functions.
+* Strengthen the mathematical foundations needed for machine learning.
+
+Progress is documented as concepts are practised and experiments are completed.
 
 ## Repository Structure
 
@@ -65,11 +83,13 @@ AI-From-Scratch/
 ├── requirements.txt
 ├── .gitignore
 └── week-01-python-git/
-    └── day-01-setup/
-        └── numpy_first_steps.py
+    ├── day-01-setup/
+    │   └── numpy_first_steps.py
+    └── day-02-numpy/
+        └── numpy_dimensions.py
 ```
 
-The structure will evolve as new topics and projects are added.
+The structure will evolve as new topics, experiments, and projects are added.
 
 ## Learning Philosophy
 
