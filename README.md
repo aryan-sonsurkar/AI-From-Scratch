@@ -64,13 +64,23 @@ Additional libraries will be introduced as needed.
 * [x] Compare element-wise addition and multiplication.
 * [x] Understand the difference between element-wise multiplication (`*`) and matrix multiplication (`@`).
 * [x] Calculate weighted sums using NumPy.
-* [x] Update the project progress log and push the Day 2 changes to GitHub.
+* [x] Practise the relationship between array operations and neural network calculations.
+
+### Day 3 — Building an Artificial Neuron from Scratch
+
+* [x] Understand inputs, weights, and weighted sums.
+* [x] Introduce bias into the neuron's calculation.
+* [x] Learn the ReLU activation function.
+* [x] Implement a reusable neuron function using Python and NumPy.
+* [x] Test the neuron with positive and negative weighted sums.
+* [x] Understand how ReLU transforms negative results into zero.
 
 ### Next Steps
 
-* Build a simple artificial neuron from scratch.
-* Explore weights, bias, and activation functions.
-* Strengthen the mathematical foundations needed for machine learning.
+* Experiment with how inputs, weights, and bias affect neuron outputs.
+* Explore activation functions and their role in neural networks.
+* Understand how neural networks learn by adjusting their parameters.
+* Build toward implementing forward propagation and backpropagation.
 
 Progress is documented as concepts are practised and experiments are completed.
 
@@ -85,8 +95,10 @@ AI-From-Scratch/
 └── week-01-python-git/
     ├── day-01-setup/
     │   └── numpy_first_steps.py
-    └── day-02-numpy/
-        └── numpy_dimensions.py
+    ├── day-02-numpy/
+    │   └── numpy_dimensions.py
+    └── day-03-first-neuron/
+        └── neuron_from_scratch.py
 ```
 
 The structure will evolve as new topics, experiments, and projects are added.
