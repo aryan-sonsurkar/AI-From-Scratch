@@ -62,6 +62,25 @@ The neuron's output is calculated by applying ReLU to the weighted sum.
 
 The implementation performs a forward calculation. It does not yet train or learn weights automatically.
 
+## Day 4 — 27 October 2026
+
+**Topic:** Experimenting with Artificial Neurons
+
+### Completed
+
+* Experimented with different weights and biases.
+* Observed how weights affect the weighted sum.
+* Studied how bias shifts the weighted sum.
+* Tested ReLU with negative, zero, and positive values.
+* Created a reusable neuron function returning both the weighted sum and output.
+* Tested biases 0, 4, 8, 9, and 10.
+
+### Key Learning
+
+The neuron calculates a weighted sum, adds bias, and applies ReLU. Increasing the bias can change the output from zero to a positive value.
+
+The neuron is not learning automatically yet; its weights and bias are still manually selected.
+
 ## Next Steps
 
 * Experiment with different inputs, weights, and bias values.
