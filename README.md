@@ -75,11 +75,25 @@ Additional libraries will be introduced as needed.
 * [x] Test the neuron with positive and negative weighted sums.
 * [x] Understand how ReLU transforms negative results into zero.
 
+### Day 4 — Experimenting with Neuron Parameters
+
+* [x] Experiment with different input weights.
+* [x] Observe how positive and negative weights affect the weighted sum.
+* [x] Investigate how changing the bias shifts the weighted sum.
+* [x] Test ReLU with negative, zero, and positive values.
+* [x] Implement a reusable neuron function that returns both the weighted sum and final output.
+* [x] Run experiments using biases of `0`, `4`, `8`, `9`, and `10`.
+* [x] Verify the experimental results.
+
+**Key learning:** A neuron's output depends on its inputs, weights, bias, and activation function. Increasing the bias can shift a negative weighted sum into positive territory.
+
+The neuron does not learn automatically yet. Its weights and bias are manually selected.
+
 ### Next Steps
 
-* Experiment with how inputs, weights, and bias affect neuron outputs.
 * Explore activation functions and their role in neural networks.
 * Understand how neural networks learn by adjusting their parameters.
+* Introduce loss functions to measure prediction errors.
 * Build toward implementing forward propagation and backpropagation.
 
 Progress is documented as concepts are practised and experiments are completed.
@@ -97,8 +111,10 @@ AI-From-Scratch/
     │   └── numpy_first_steps.py
     ├── day-02-numpy/
     │   └── numpy_dimensions.py
-    └── day-03-first-neuron/
-        └── neuron_from_scratch.py
+    ├── day-03-first-neuron/
+    │   └── neuron_from_scratch.py
+    └── day-04-neuron-experiments/
+        └── neuron_experiments.py
 ```
 
 The structure will evolve as new topics, experiments, and projects are added.
