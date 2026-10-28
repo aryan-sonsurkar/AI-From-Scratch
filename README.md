@@ -89,11 +89,36 @@ Additional libraries will be introduced as needed.
 
 The neuron does not learn automatically yet. Its weights and bias are manually selected.
 
-### Next Steps
+### Day 5 — Loss Functions and Mean Squared Error
 
-* Explore activation functions and their role in neural networks.
-* Understand how neural networks learn by adjusting their parameters.
-* Introduce loss functions to measure prediction errors.
+* [x] Understand prediction errors using predicted and actual values.
+* [x] Calculate squared error.
+* [x] Understand why squaring removes the sign of an error.
+* [x] Learn Mean Squared Error (MSE).
+* [x] Calculate MSE manually for multiple predictions.
+* [x] Compare prediction errors using MSE.
+* [x] Implement a reusable `squared_error()` function.
+* [x] Implement a reusable `mean_squared_error()` function.
+* [x] Test the loss functions using sample house-price predictions.
+
+**Key learning:** A loss function measures the difference between predictions and actual values. MSE averages squared errors, giving larger errors a greater influence on the result.
+
+For the experiment:
+
+* Actual prices: `[30, 30, 30]`
+* Predicted prices: `[25, 29, 40]`
+* Squared errors: `[25, 1, 100]`
+* Mean Squared Error: `(25 + 1 + 100) / 3 = 42.0`
+
+A lower MSE indicates smaller average squared prediction errors when models are evaluated on the same dataset.
+
+Calculating loss alone does not train a model. The next step is to explore how model parameters can be adjusted to reduce loss.
+
+## Next Steps
+
+* Explore how changing model parameters affects prediction errors.
+* Understand how a model can adjust its weights and bias to reduce loss.
+* Introduce optimization and gradient descent through numerical experiments.
 * Build toward implementing forward propagation and backpropagation.
 
 Progress is documented as concepts are practised and experiments are completed.
@@ -113,8 +138,10 @@ AI-From-Scratch/
     │   └── numpy_dimensions.py
     ├── day-03-first-neuron/
     │   └── neuron_from_scratch.py
-    └── day-04-neuron-experiments/
-        └── neuron_experiments.py
+    ├── day-04-neuron-experiments/
+    │   └── neuron_experiments.py
+    └── day-05-loss-functions/
+        └── loss_function.py
 ```
 
 The structure will evolve as new topics, experiments, and projects are added.
