@@ -145,12 +145,88 @@ Explore how model parameters can be adjusted to reduce loss, introducing optimiz
 
 **Status:** Complete.
 
+## Day 6 — 29 October 2026
+
+**Focus:** Gradient Descent and Training a Simple Model
+
+### Completed
+
+* [x] Reviewed predictions and squared error.
+* [x] Experimented with how changing a weight affects prediction and loss.
+* [x] Compared different weights to identify which produced lower loss.
+* [x] Learned that the gradient indicates how loss changes as a parameter changes.
+* [x] Used a learning rate to control the size of weight updates.
+* [x] Implemented a gradient-based weight update in Python.
+* [x] Repeated the update over 100 iterations.
+* [x] Compared training with learning rates `0.01` and `0.1`.
+
+### Experiment Setup
+
+* Input (`x`): `3`
+* Target (`y`): `10`
+* Initial weight (`w`): `2`
+* Bias (`b`): `0`
+* Initial prediction: `6`
+* Initial squared error: `16`
+
+### Training Results
+
+With a learning rate of `0.01` over 100 iterations:
+
+* Final weight: approximately `3.33333333`
+* Final prediction: approximately `10`
+* Final loss: approximately `9.27e-17`
+
+With a learning rate of `0.1` over 100 iterations:
+
+* Final weight: approximately `3.33333333`
+* Final prediction: approximately `10`
+* Final loss: approximately `6.64e-19`
+
+### What I Learned
+
+For the simple model:
+
+`prediction = w * x + b`
+
+The squared loss is:
+
+`loss = (y - prediction) ** 2`
+
+For this model, the gradient of the loss with respect to the weight is:
+
+`gradient = -2 * x * (y - prediction)`
+
+The weight is updated using:
+
+`w = w - learning_rate * gradient`
+
+Repeating this update reduced the loss and brought the prediction close to the target. The learning rate controls the size of each update; a larger learning rate is not automatically unstable and its effect depends on the model and data.
+
+This experiment updated the weight while keeping the bias fixed at zero.
+
+### What I Built
+
+`week-01-python-git/day-06-gradient-descent/gradient_descent.py`
+
+The script calculates a prediction and loss, updates the weight repeatedly, and prints the final weight, prediction, and loss.
+
+### Time Spent
+
+Update with actual time.
+
+### Blockers
+
+None reported.
+
+**Status:** Complete.
+
 ## Next Steps
 
-* [ ] Experiment with how changing weights and bias affects predictions and loss.
-* [ ] Understand how model parameters influence prediction errors.
+* [ ] Experiment with updating both weight and bias.
+* [ ] Understand how multiple training examples affect loss.
 * [ ] Explore optimization techniques for reducing loss.
-* [ ] Introduce gradient descent through simple numerical experiments.
-* [ ] Progress toward understanding how neural networks learn automatically.
+* [ ] Progress toward implementing forward propagation and backpropagation.
+* [ ] Continue toward understanding how neural networks learn automatically.
 
 This log records completed work and the concepts learned during the 60-day AI journey.

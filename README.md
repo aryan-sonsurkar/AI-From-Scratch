@@ -19,17 +19,17 @@ My goal is to understand how AI works under the hood by implementing concepts, r
 
 ## Roadmap
 
-| Phase      | Focus                                                          |
-| ---------- | -------------------------------------------------------------- |
-| Week 1     | Python refresh, Git, development setup, and NumPy fundamentals |
-| Week 2     | Numerical computing and mathematics for machine learning       |
-| Week 3     | Machine learning fundamentals with scikit-learn                |
-| Week 4     | Neural networks and gradients from scratch                     |
-| Week 5     | PyTorch fundamentals                                           |
-| Week 6     | Tokenization and language models                               |
-| Week 7     | Attention and transformer architecture                         |
-| Week 8     | Building a tiny GPT-style model                                |
-| Final days | Testing, documentation, and publishing                         |
+| Phase      | Focus                                                                                       |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| Week 1     | Python refresh, Git, development setup, NumPy, neurons, loss, and introductory optimization |
+| Week 2     | Numerical computing and mathematics for machine learning                                    |
+| Week 3     | Machine learning fundamentals with scikit-learn                                             |
+| Week 4     | Neural networks and gradients from scratch                                                  |
+| Week 5     | PyTorch fundamentals                                                                        |
+| Week 6     | Tokenization and language models                                                            |
+| Week 7     | Attention and transformer architecture                                                      |
+| Week 8     | Building a tiny GPT-style model                                                             |
+| Final days | Testing, documentation, and publishing                                                      |
 
 This is a learning roadmap, so the schedule may change as I work through the concepts.
 
@@ -75,6 +75,8 @@ Additional libraries will be introduced as needed.
 * [x] Test the neuron with positive and negative weighted sums.
 * [x] Understand how ReLU transforms negative results into zero.
 
+**Key learning:** A neuron combines inputs and weights, adds a bias, and applies an activation function. This first implementation performs a forward calculation; its parameters are manually selected.
+
 ### Day 4 — Experimenting with Neuron Parameters
 
 * [x] Experiment with different input weights.
@@ -85,9 +87,7 @@ Additional libraries will be introduced as needed.
 * [x] Run experiments using biases of `0`, `4`, `8`, `9`, and `10`.
 * [x] Verify the experimental results.
 
-**Key learning:** A neuron's output depends on its inputs, weights, bias, and activation function. Increasing the bias can shift a negative weighted sum into positive territory.
-
-The neuron does not learn automatically yet. Its weights and bias are manually selected.
+**Key learning:** A neuron's output depends on its inputs, weights, bias, and activation function. The neuron does not learn automatically yet; its weights and bias are manually selected.
 
 ### Day 5 — Loss Functions and Mean Squared Error
 
@@ -101,27 +101,55 @@ The neuron does not learn automatically yet. Its weights and bias are manually s
 * [x] Implement a reusable `mean_squared_error()` function.
 * [x] Test the loss functions using sample house-price predictions.
 
-**Key learning:** A loss function measures the difference between predictions and actual values. MSE averages squared errors, giving larger errors a greater influence on the result.
+**Experiment**
 
-For the experiment:
-
-* Actual prices: `[30, 30, 30]`
-* Predicted prices: `[25, 29, 40]`
+* Actual values: `[30, 30, 30]`
+* Predicted values: `[25, 29, 40]`
 * Squared errors: `[25, 1, 100]`
-* Mean Squared Error: `(25 + 1 + 100) / 3 = 42.0`
+* MSE: `(25 + 1 + 100) / 3 = 42.0`
 
-A lower MSE indicates smaller average squared prediction errors when models are evaluated on the same dataset.
+**Key learning:** A loss function measures the difference between predictions and actual values. MSE averages squared errors, giving larger errors a greater influence on the result. Calculating loss alone does not train a model; parameters must be adjusted to reduce it.
 
-Calculating loss alone does not train a model. The next step is to explore how model parameters can be adjusted to reduce loss.
+### Day 6 — Gradient Descent: Training a Simple Model
+
+* [x] Review predictions and squared error.
+* [x] Experiment with how changing a weight affects prediction and loss.
+* [x] Compare weights to see which produces lower loss.
+* [x] Learn how the gradient indicates how loss changes as a parameter changes.
+* [x] Use a learning rate to control the size of weight updates.
+* [x] Implement a gradient-based weight update in Python.
+* [x] Repeat weight updates over 100 iterations.
+* [x] Compare learning rates `0.01` and `0.1`.
+
+**Experiment setup**
+
+* Input: `x = 3`
+* Target: `y = 10`
+* Initial weight: `w = 2`
+* Bias: `b = 0`
+* Initial prediction: `6`
+* Initial squared loss: `16`
+
+**Results after 100 iterations**
+
+| Learning rate | Final weight (approx.) | Final prediction (approx.) | Final loss (approx.) |
+| ------------- | ---------------------: | -------------------------: | -------------------: |
+| `0.01`        |           `3.33333333` |                       `10` |           `9.27e-17` |
+| `0.1`         |           `3.33333333` |                       `10` |           `6.64e-19` |
+
+**Key learning**
+
+For the simple model `prediction = w * x + b`, squared loss is `(y - prediction) ** 2`. The weight gradient is `-2 * x * (y - prediction)`, and the update rule is `w = w - learning_rate * gradient`.
+
+Repeating the update reduced the loss and brought the prediction close to the target. A larger learning rate is not automatically unstable; its effect depends on the model and data. In this experiment, the weight was updated while the bias remained fixed at zero.
 
 ## Next Steps
 
-* Explore how changing model parameters affects prediction errors.
-* Understand how a model can adjust its weights and bias to reduce loss.
-* Introduce optimization and gradient descent through numerical experiments.
-* Build toward implementing forward propagation and backpropagation.
-
-Progress is documented as concepts are practised and experiments are completed.
+* [ ] Experiment with updating both weight and bias.
+* [ ] Understand how multiple training examples affect loss.
+* [ ] Explore optimization techniques for reducing loss.
+* [ ] Build toward implementing forward propagation and backpropagation.
+* [ ] Progress toward understanding how neural networks learn automatically.
 
 ## Repository Structure
 
@@ -140,8 +168,10 @@ AI-From-Scratch/
     │   └── neuron_from_scratch.py
     ├── day-04-neuron-experiments/
     │   └── neuron_experiments.py
-    └── day-05-loss-functions/
-        └── loss_function.py
+    ├── day-05-loss-functions/
+    │   └── loss_function.py
+    └── day-06-gradient-descent/
+        └── gradient_descent.py
 ```
 
 The structure will evolve as new topics, experiments, and projects are added.
