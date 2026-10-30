@@ -137,16 +137,45 @@ Additional libraries will be introduced as needed.
 | `0.01`        |           `3.33333333` |                       `10` |           `9.27e-17` |
 | `0.1`         |           `3.33333333` |                       `10` |           `6.64e-19` |
 
-**Key learning**
-
-For the simple model `prediction = w * x + b`, squared loss is `(y - prediction) ** 2`. The weight gradient is `-2 * x * (y - prediction)`, and the update rule is `w = w - learning_rate * gradient`.
+**Key learning:** For `prediction = w * x + b`, squared loss is `(y - prediction) ** 2`. The weight gradient is `-2 * x * (y - prediction)`, and the update rule is `w = w - learning_rate * dw`.
 
 Repeating the update reduced the loss and brought the prediction close to the target. A larger learning rate is not automatically unstable; its effect depends on the model and data. In this experiment, the weight was updated while the bias remained fixed at zero.
 
+### Day 7 — Gradient Descent with Both Weight and Bias
+
+* [x] Use the linear model `prediction = w * x + b`.
+* [x] Calculate prediction error and squared loss.
+* [x] Calculate the gradient with respect to weight (`dw`).
+* [x] Calculate the gradient with respect to bias (`db`).
+* [x] Update both weight and bias during gradient descent.
+* [x] Train the model for 100 iterations.
+* [x] Check the final prediction and loss.
+
+**Experiment setup**
+
+* Input: `x = 3`
+* Target: `y = 13`
+* Initial weight: `w = 2.0`
+* Initial bias: `b = 0.0`
+* Learning rate: `0.01`
+* Iterations: `100`
+
+**Results after 100 iterations**
+
+| Parameter    |    Final result |
+| ------------ | --------------: |
+| Weight (`w`) |  `3.9199999992` |
+| Bias (`b`)   |  `1.2399999997` |
+| Prediction   | `12.9999999968` |
+| Loss         |      `9.97e-18` |
+
+**Key learning:** The gradients are `dw = -2 * x * (y - prediction)` and `db = -2 * (y - prediction)`. The parameters are updated with `w = w - learning_rate * dw` and `b = b - learning_rate * db`.
+
+Updating the bias lets the model adjust the prediction independently of the input's weighted contribution. In this experiment, the model fitted one training example closely. One example is not enough to establish generalization, and multiple weight/bias combinations can fit the same single example.
+
 ## Next Steps
 
-* [ ] Experiment with updating both weight and bias.
-* [ ] Understand how multiple training examples affect loss.
+* [ ] Train using multiple examples and examine how they affect loss.
 * [ ] Explore optimization techniques for reducing loss.
 * [ ] Build toward implementing forward propagation and backpropagation.
 * [ ] Progress toward understanding how neural networks learn automatically.
@@ -170,8 +199,10 @@ AI-From-Scratch/
     │   └── neuron_experiments.py
     ├── day-05-loss-functions/
     │   └── loss_function.py
-    └── day-06-gradient-descent/
-        └── gradient_descent.py
+    ├── day-06-gradient-descent/
+    │   └── gradient_descent.py
+    └── day-07-training-bias/
+        └── training_bias.py
 ```
 
 The structure will evolve as new topics, experiments, and projects are added.

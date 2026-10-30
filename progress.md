@@ -195,11 +195,11 @@ The squared loss is:
 
 For this model, the gradient of the loss with respect to the weight is:
 
-`gradient = -2 * x * (y - prediction)`
+`dw = -2 * x * (y - prediction)`
 
 The weight is updated using:
 
-`w = w - learning_rate * gradient`
+`w = w - learning_rate * dw`
 
 Repeating this update reduced the loss and brought the prediction close to the target. The learning rate controls the size of each update; a larger learning rate is not automatically unstable and its effect depends on the model and data.
 
@@ -221,10 +221,81 @@ None reported.
 
 **Status:** Complete.
 
+## Day 7 — 30 October 2026
+
+**Focus:** Gradient Descent with Both Weight and Bias
+
+### Completed
+
+* [x] Used the linear model `prediction = w * x + b`.
+* [x] Calculated prediction error and squared loss.
+* [x] Calculated the gradient with respect to weight (`dw`).
+* [x] Calculated the gradient with respect to bias (`db`).
+* [x] Updated both weight and bias during gradient descent.
+* [x] Trained the model for 100 iterations.
+* [x] Checked the final prediction and loss.
+
+### Experiment Setup
+
+* Input (`x`): `3`
+* Target (`y`): `13`
+* Initial weight (`w`): `2.0`
+* Initial bias (`b`): `0.0`
+* Learning rate: `0.01`
+* Iterations: `100`
+
+### Training Results
+
+* Final weight: approximately `3.9199999992`
+* Final bias: approximately `1.2399999997`
+* Final prediction: approximately `12.9999999968`
+* Final loss: approximately `9.97e-18`
+
+### What I Learned
+
+The model calculates a prediction using:
+
+`prediction = w * x + b`
+
+The squared loss is:
+
+`loss = (y - prediction) ** 2`
+
+The gradients used in this experiment are:
+
+`dw = -2 * x * (y - prediction)`
+
+`db = -2 * (y - prediction)`
+
+Both parameters are updated using gradient descent:
+
+`w = w - learning_rate * dw`
+
+`b = b - learning_rate * db`
+
+Updating the bias allows the model to adjust the prediction independently of the input's weighted contribution.
+
+In this experiment, the model fitted the single training example closely. One example is not enough to establish whether the model generalizes to unseen data, and different weight/bias combinations can fit the same single example.
+
+### What I Built
+
+`week-01-python-git/day-07-training-bias/training_bias.py`
+
+The script trains a simple linear model by updating both weight and bias over repeated iterations.
+
+### Time Spent
+
+Update with actual time.
+
+### Blockers
+
+None reported.
+
+**Status:** Complete.
+
 ## Next Steps
 
-* [ ] Experiment with updating both weight and bias.
-* [ ] Understand how multiple training examples affect loss.
+* [ ] Train using multiple examples and examine how they affect loss.
 * [ ] Explore optimization techniques for reducing loss.
 * [ ] Progress toward implementing forward propagation and backpropagation.
 * [ ] Continue toward understanding how neural networks learn automatically.
