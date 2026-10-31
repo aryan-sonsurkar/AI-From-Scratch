@@ -22,7 +22,7 @@ My goal is to understand how AI works under the hood by implementing concepts, r
 | Phase      | Focus                                                                                       |
 | ---------- | ------------------------------------------------------------------------------------------- |
 | Week 1     | Python refresh, Git, development setup, NumPy, neurons, loss, and introductory optimization |
-| Week 2     | Numerical computing and mathematics for machine learning                                    |
+| Week 2     | Numerical computing, linear regression, and mathematics for machine learning                |
 | Week 3     | Machine learning fundamentals with scikit-learn                                             |
 | Week 4     | Neural networks and gradients from scratch                                                  |
 | Week 5     | PyTorch fundamentals                                                                        |
@@ -47,59 +47,57 @@ Additional libraries will be introduced as needed.
 
 ### Day 1 — Environment Setup and NumPy Basics
 
-* [x] Verify Python, Git, and pip.
-* [x] Create a Python virtual environment.
-* [x] Install NumPy.
-* [x] Create the project repository and push the initial work to GitHub.
-* [x] Practice array creation, indexing, and shape.
-* [x] Explore element-wise addition, multiplication, and exponentiation.
-* [x] Create the first NumPy experiment.
+* [x] Verified Python, Git, and pip.
+* [x] Created a Python virtual environment.
+* [x] Installed NumPy.
+* [x] Created the project repository and pushed the initial work to GitHub.
+* [x] Practised array creation, indexing, and shape.
+* [x] Explored element-wise addition, multiplication, and exponentiation.
+* [x] Created the first NumPy experiment.
 
 ### Day 2 — NumPy Dimensions, Reshaping, and Matrix Operations
 
-* [x] Explore 1D, 2D, and 3D arrays.
-* [x] Understand `ndim` and `shape`.
-* [x] Practise accessing elements using row and column indexing.
-* [x] Reshape arrays using `reshape()`.
-* [x] Compare element-wise addition and multiplication.
-* [x] Understand the difference between element-wise multiplication (`*`) and matrix multiplication (`@`).
-* [x] Calculate weighted sums using NumPy.
-* [x] Practise the relationship between array operations and neural network calculations.
+* [x] Explored 1D, 2D, and 3D arrays.
+* [x] Understood `ndim` and `shape`.
+* [x] Practised row and column indexing.
+* [x] Reshaped arrays using `reshape()`.
+* [x] Compared element-wise addition and multiplication.
+* [x] Learned the difference between element-wise multiplication (`*`) and matrix multiplication (`@`).
+* [x] Calculated weighted sums using NumPy.
 
 ### Day 3 — Building an Artificial Neuron from Scratch
 
-* [x] Understand inputs, weights, and weighted sums.
-* [x] Introduce bias into the neuron's calculation.
-* [x] Learn the ReLU activation function.
-* [x] Implement a reusable neuron function using Python and NumPy.
-* [x] Test the neuron with positive and negative weighted sums.
-* [x] Understand how ReLU transforms negative results into zero.
+* [x] Understood inputs, weights, and weighted sums.
+* [x] Introduced bias into the neuron's calculation.
+* [x] Learned the ReLU activation function.
+* [x] Implemented a reusable neuron function using Python and NumPy.
+* [x] Tested the neuron with positive and negative weighted sums.
+* [x] Understood how ReLU transforms negative results into zero.
 
 **Key learning:** A neuron combines inputs and weights, adds a bias, and applies an activation function. This first implementation performs a forward calculation; its parameters are manually selected.
 
 ### Day 4 — Experimenting with Neuron Parameters
 
-* [x] Experiment with different input weights.
-* [x] Observe how positive and negative weights affect the weighted sum.
-* [x] Investigate how changing the bias shifts the weighted sum.
-* [x] Test ReLU with negative, zero, and positive values.
-* [x] Implement a reusable neuron function that returns both the weighted sum and final output.
-* [x] Run experiments using biases of `0`, `4`, `8`, `9`, and `10`.
-* [x] Verify the experimental results.
+* [x] Experimented with different input weights.
+* [x] Observed how positive and negative weights affect the weighted sum.
+* [x] Investigated how changing the bias shifts the weighted sum.
+* [x] Tested ReLU with negative, zero, and positive values.
+* [x] Implemented a reusable neuron function that returns both the weighted sum and final output.
+* [x] Ran experiments using biases of `0`, `4`, `8`, `9`, and `10`.
+* [x] Verified the experimental results.
 
 **Key learning:** A neuron's output depends on its inputs, weights, bias, and activation function. The neuron does not learn automatically yet; its weights and bias are manually selected.
 
 ### Day 5 — Loss Functions and Mean Squared Error
 
-* [x] Understand prediction errors using predicted and actual values.
-* [x] Calculate squared error.
-* [x] Understand why squaring removes the sign of an error.
-* [x] Learn Mean Squared Error (MSE).
-* [x] Calculate MSE manually for multiple predictions.
-* [x] Compare prediction errors using MSE.
-* [x] Implement a reusable `squared_error()` function.
-* [x] Implement a reusable `mean_squared_error()` function.
-* [x] Test the loss functions using sample house-price predictions.
+* [x] Understood prediction errors using predicted and actual values.
+* [x] Calculated squared error.
+* [x] Learned why squaring removes the sign of an error.
+* [x] Learned Mean Squared Error (MSE).
+* [x] Calculated MSE manually for multiple predictions.
+* [x] Compared prediction errors using MSE.
+* [x] Implemented reusable `squared_error()` and `mean_squared_error()` functions.
+* [x] Tested the loss functions using sample price predictions.
 
 **Experiment**
 
@@ -112,14 +110,14 @@ Additional libraries will be introduced as needed.
 
 ### Day 6 — Gradient Descent: Training a Simple Model
 
-* [x] Review predictions and squared error.
-* [x] Experiment with how changing a weight affects prediction and loss.
-* [x] Compare weights to see which produces lower loss.
-* [x] Learn how the gradient indicates how loss changes as a parameter changes.
-* [x] Use a learning rate to control the size of weight updates.
-* [x] Implement a gradient-based weight update in Python.
-* [x] Repeat weight updates over 100 iterations.
-* [x] Compare learning rates `0.01` and `0.1`.
+* [x] Reviewed predictions and squared error.
+* [x] Experimented with how changing a weight affects prediction and loss.
+* [x] Compared weights to see which produces lower loss.
+* [x] Learned how the gradient indicates how loss changes as a parameter changes.
+* [x] Used a learning rate to control the size of weight updates.
+* [x] Implemented a gradient-based weight update in Python.
+* [x] Repeated weight updates over 100 iterations.
+* [x] Compared learning rates `0.01` and `0.1`.
 
 **Experiment setup**
 
@@ -143,13 +141,13 @@ Repeating the update reduced the loss and brought the prediction close to the ta
 
 ### Day 7 — Gradient Descent with Both Weight and Bias
 
-* [x] Use the linear model `prediction = w * x + b`.
-* [x] Calculate prediction error and squared loss.
-* [x] Calculate the gradient with respect to weight (`dw`).
-* [x] Calculate the gradient with respect to bias (`db`).
-* [x] Update both weight and bias during gradient descent.
-* [x] Train the model for 100 iterations.
-* [x] Check the final prediction and loss.
+* [x] Used the linear model `prediction = w * x + b`.
+* [x] Calculated prediction error and squared loss.
+* [x] Calculated the gradient with respect to weight (`dw`).
+* [x] Calculated the gradient with respect to bias (`db`).
+* [x] Updated both weight and bias during gradient descent.
+* [x] Trained the model for 100 iterations.
+* [x] Checked the final prediction and loss.
 
 **Experiment setup**
 
@@ -173,12 +171,64 @@ Repeating the update reduced the loss and brought the prediction close to the ta
 
 Updating the bias lets the model adjust the prediction independently of the input's weighted contribution. In this experiment, the model fitted one training example closely. One example is not enough to establish generalization, and multiple weight/bias combinations can fit the same single example.
 
-## Next Steps
+### Day 8 — Training with Multiple Examples
 
-* [ ] Train using multiple examples and examine how they affect loss.
-* [ ] Explore optimization techniques for reducing loss.
-* [ ] Build toward implementing forward propagation and backpropagation.
-* [ ] Progress toward understanding how neural networks learn automatically.
+* [x] Created a dataset containing five input-output pairs.
+* [x] Stored inputs and actual outputs in separate Python lists.
+* [x] Trained a linear model using `prediction = w * x + b`.
+* [x] Calculated prediction errors for multiple examples.
+* [x] Accumulated gradients for weight and bias across the dataset.
+* [x] Learned why gradients are averaged before updating parameters.
+* [x] Implemented batch gradient descent using nested loops.
+* [x] Explored how a trained model predicts outputs for inputs not included in its training examples.
+
+**Experiment setup**
+
+Inputs:
+
+`[1, 2, 3, 4, 5]`
+
+Actual outputs:
+
+`[5, 7, 9, 11, 13]`
+
+The dataset follows the relationship:
+
+`y = 2 * x + 3`
+
+Initial weight: `w = 0.0`
+
+Initial bias: `b = 0.0`
+
+Learning rate: `0.01`
+
+Training iterations: `1000`
+
+**Key learning:** Training on multiple examples gives the model more information about the relationship between inputs and outputs.
+
+The prediction error is:
+
+`error = prediction - actual`
+
+For `n` training examples, the gradients for Mean Squared Error are:
+
+`dw = (2 / n) * sum(x * error)`
+
+`db = (2 / n) * sum(error)`
+
+The parameter updates are:
+
+`w = w - learning_rate * dw`
+
+`b = b - learning_rate * db`
+
+The implementation accumulates gradient contributions from all examples, averages them, and updates the parameters once per iteration. This process is called **batch gradient descent**.
+
+Gradient averaging controls the scale of the update. Summing gradients without averaging makes the update larger for the same learning rate and dataset.
+
+A model that learns a relationship can predict outputs for new inputs, although good performance on training examples alone does not guarantee generalization.
+
+**Script:** `week-02-linear-regression/day-08-multiple-examples/multiple_examples.py`
 
 ## Repository Structure
 
@@ -188,21 +238,24 @@ AI-From-Scratch/
 ├── progress.md
 ├── requirements.txt
 ├── .gitignore
-└── week-01-python-git/
-    ├── day-01-setup/
-    │   └── numpy_first_steps.py
-    ├── day-02-numpy/
-    │   └── numpy_dimensions.py
-    ├── day-03-first-neuron/
-    │   └── neuron_from_scratch.py
-    ├── day-04-neuron-experiments/
-    │   └── neuron_experiments.py
-    ├── day-05-loss-functions/
-    │   └── loss_function.py
-    ├── day-06-gradient-descent/
-    │   └── gradient_descent.py
-    └── day-07-training-bias/
-        └── training_bias.py
+├── week-01-python-git/
+│   ├── day-01-setup/
+│   │   └── numpy_first_steps.py
+│   ├── day-02-numpy/
+│   │   └── numpy_dimensions.py
+│   ├── day-03-first-neuron/
+│   │   └── neuron_from_scratch.py
+│   ├── day-04-neuron-experiments/
+│   │   └── neuron_experiments.py
+│   ├── day-05-loss-functions/
+│   │   └── loss_function.py
+│   ├── day-06-gradient-descent/
+│   │   └── gradient_descent.py
+│   └── day-07-training-bias/
+│       └── training_bias.py
+└── week-02-linear-regression/
+    └── day-08-multiple-examples/
+        └── multiple_examples.py
 ```
 
 The structure will evolve as new topics, experiments, and projects are added.

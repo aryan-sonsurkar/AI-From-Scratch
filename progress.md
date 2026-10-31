@@ -293,10 +293,102 @@ None reported.
 
 **Status:** Complete.
 
+## Day 8 — 31 October 2026
+
+**Focus:** Training a Linear Model with Multiple Examples
+
+### Completed
+
+* [x] Created a dataset containing five input-output pairs.
+* [x] Used separate Python lists to store inputs and actual outputs.
+* [x] Trained a linear model using `prediction = w * x + b`.
+* [x] Calculated prediction errors for multiple examples.
+* [x] Accumulated gradients for weight and bias across the dataset.
+* [x] Learned why gradients are averaged before updating parameters.
+* [x] Implemented batch gradient descent using nested loops.
+* [x] Explored how a trained model predicts an output for an input not included in the training examples.
+
+### Experiment Setup
+
+Training inputs:
+
+`[1, 2, 3, 4, 5]`
+
+Actual outputs:
+
+`[5, 7, 9, 11, 13]`
+
+The data follows the relationship:
+
+`y = 2 * x + 3`
+
+Initial weight:
+
+`w = 0.0`
+
+Initial bias:
+
+`b = 0.0`
+
+Learning rate:
+
+`0.01`
+
+Training iterations:
+
+`1000`
+
+### What I Learned
+
+A model trained on one example can fit that example without necessarily learning a reliable general pattern. Multiple examples provide more information about the relationship between inputs and outputs.
+
+The model calculates each prediction using:
+
+`prediction = w * x + b`
+
+The prediction error is:
+
+`error = prediction - actual`
+
+For Mean Squared Error, the gradients across `n` examples are:
+
+`dw = (2 / n) * sum(x * error)`
+
+`db = (2 / n) * sum(error)`
+
+The parameters are updated using:
+
+`w = w - learning_rate * dw`
+
+`b = b - learning_rate * db`
+
+The implementation accumulates the gradient contributions from all examples, averages them, and updates the parameters once per training iteration. This is batch gradient descent.
+
+Gradient averaging controls the scale of the update. If the same gradients are summed without averaging, the effective update becomes larger for the same learning rate and dataset.
+
+A model that learns the relationship between inputs and outputs can make predictions for new inputs. However, a correct prediction on an unseen input is not guaranteed for every dataset.
+
+### What I Built
+
+`week-02-linear-regression/day-08-multiple-examples/multiple_examples.py`
+
+The script trains a linear model using multiple examples and batch gradient descent.
+
+### Time Spent
+
+Update with actual time.
+
+### Blockers
+
+None reported.
+
+**Status:** Complete, after verifying the final code and results.
+
 ## Next Steps
 
-* [ ] Train using multiple examples and examine how they affect loss.
-* [ ] Explore optimization techniques for reducing loss.
+* [ ] Evaluate predictions using Mean Squared Error during training.
+* [ ] Explore how loss changes as training progresses.
+* [ ] Experiment with different learning rates.
 * [ ] Progress toward implementing forward propagation and backpropagation.
 * [ ] Continue toward understanding how neural networks learn automatically.
 
